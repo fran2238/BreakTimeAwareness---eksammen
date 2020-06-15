@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="breakTime"
+            type="com.example.breaktimeawareness.database.BreakTime" />
+        <variable
+            name="clickListener"
+            type="com.example.breaktimeawareness.breakOverview.BreakTimeListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(breakTime)}"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/quality_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:breakImage="@{breakTime}"
+            app:layout_constraintEnd_toStartOf="@+id/quality_string"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_focus_5"
+
+            />
+
+        <TextView
+            android:id="@+id/duration_break"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            app:breakDurationFormatted="@{breakTime}"
+            android:layout_marginStart="95dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/quality_image"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quality_image"
+            app:layout_constraintVertical_bias="0.512"
+
+            />
+
+        <TextView
+            android:id="@+id/quality_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:breakQualityString="@{breakTime}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/quality_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.508"
+            android:layout_marginEnd="200dp"
+            tools:text="Good" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

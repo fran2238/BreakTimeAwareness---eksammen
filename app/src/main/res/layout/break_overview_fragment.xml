@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="breakTImeViewModel"
+    type="com.example.breaktimeawareness.breakOverview.BreakOverviewViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".breakOverview.BreakOverviewFragment">
+
+
+
+        <TextView
+            android:id="@+id/breakTimeChronometer"
+            android:layout_width="94dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="32dp"
+            android:text="@{breakTImeViewModel.currentTimeString}"
+            app:layout_constraintEnd_toStartOf="@+id/breakEndBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/breakStartBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00:00:00"
+            />
+        <Button
+            android:id="@+id/breakStartBtn"
+            style="@style/break_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:enabled="@{breakTImeViewModel.startButtonVisible}"
+            android:onClick="@{() -> breakTImeViewModel.onStartTracking()}"
+            android:text="@string/start_btn_string"
+            app:layout_constraintBaseline_toBaselineOf="@+id/breakEndBtn"
+            app:layout_constraintEnd_toStartOf="@+id/breakTimeChronometer"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/breakEndBtn"
+            style="@style/break_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:enabled="@{breakTImeViewModel.stopButtonVisible}"
+            android:onClick="@{() -> breakTImeViewModel.onStopTracking()}"
+            android:text="@string/end_btn_string"
+            app:layout_constraintBottom_toTopOf="@+id/break_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/breakTimeChronometer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/break_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/fab_margin"
+            app:layout_constraintBottom_toTopOf="@id/break_clear_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/breakStartBtn"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/break_clear_btn"
+            style="@style/clear_btn_breakOverview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:enabled="@{breakTImeViewModel.clearButtonVisible}"
+            android:onClick="@{() -> breakTImeViewModel.onClear()}"
+            android:text="@string/clear_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

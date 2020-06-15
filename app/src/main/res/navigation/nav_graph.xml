@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/breakOverviewFragment">
+    <fragment
+        android:id="@+id/breakOverviewFragment"
+        android:name="com.example.breaktimeawareness.breakOverview.BreakOverviewFragment"
+        android:label="break_overview_fragment"
+        tools:layout="@layout/break_overview_fragment" >
+        <action
+            android:id="@+id/action_breakOverviewFragment_to_breakDetailFragment"
+            app:destination="@id/breakDetailFragment" />
+        <action
+            android:id="@+id/action_breakOverviewFragment_to_breakFocusFragment"
+            app:destination="@id/breakFocusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakDetailFragment"
+        android:name="com.example.breaktimeawareness.breakDetail.BreakDetailFragment"
+        android:label="break_detail_fragment"
+        tools:layout="@layout/break_detail_fragment" >
+<argument
+    android:name="breakTimeKey"
+    app:argType="long"
+    />
+        <action
+            android:id="@+id/action_breakDetailFragment_to_breakOverviewFragment"
+            app:destination="@id/breakOverviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakFocusFragment"
+        android:name="com.example.breaktimeawareness.breakFocus.BreakFocusFragment"
+        android:label="BreakFocusFragment"
+        tools:layout="@layout/break_focus_fragment">
+        <argument
+            android:name="breakTimeKey"
+            app:argType="long"
+            />
+        <action
+            android:id="@+id/action_breakFocusFragment_to_breakOverviewFragment"
+            app:destination="@id/breakOverviewFragment" />
+    </fragment>
+</navigation>
+
+
+
+

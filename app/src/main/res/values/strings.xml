@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Break Time Awareness</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="end_btn_string">End</string>
+    <string name="start_btn_string">Start</string>
+    <string name="clear_btn">Clear</string>
+    <string name="header_text">Pause Målinger</string>
+    <string name="cleared_message">Alle Pauser er Fjernet</string>
+// quaæity
+
+    <string name="quality_0">Sleep Quality 0</string>
+    <string name="quality_1">Sleep Quality 1</string>
+    <string name="quality_2">Sleep Quality 2</string>
+    <string name="quality_3">Sleep Quality 3</string>
+    <string name="quality_4">Sleep Quality 4</string>
+    <string name="quality_5">Sleep Quality 5</string>
+
+    // util
+    <string name="title"><![CDATA[<h3>HERE IS YOUR SLEEP DATA</h3>]]></string>
+    <string name="start_time"><![CDATA[<b>Start:</b>]]></string>
+    <string name="end_time"><![CDATA[<b>End:</b>]]></string>
+    <string name="quality"><![CDATA[<b>Quality:</b>]]></string>
+    <string name="hours_slept"><![CDATA[<b>Hours:Minutes:Seconds</b>]]></string>
+
+    <string name="minutes_length">%d minuter i %s</string>
+    <string name="hours_length">%d timer i %s</string>
+    <string name="seconds_length">%d sekunder i %s</string>
+    <string name="how_was_hour_work">Hvordan var din arbejds periode ?</string>
+
+
+    <string name="zero_quality">  </string>
+    <string name="one_quality">Dårlig</string>
+    <string name="two_quality">Ringe</string>
+    <string name="three_quality">OK</string>
+    <string name="four_quality">God</string>
+    <string name="five_quality">Fantastisk</string>
+    <string name="close">Luk</string>
+    <string name="noiseLevel">"Støj Niveauet var :  "</string>
+    <string name="first_warning">Du Har Arbejdet i 30 min over en pause</string>
+    <string name="second_warning">"Du har arbejde  i en time, anbefales at holde pause "</string>
+    <string name="final_warning">Du har arbejdet i 90 min, hold en pause så hurtight som muligt</string>
+
+</resources>
